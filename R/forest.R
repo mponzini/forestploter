@@ -75,6 +75,9 @@
 #' examples in the \code{\link{make_boxplot}}.
 #' @param theme Theme of the forest plot, see \code{\link{forest_theme}} for
 #' details.
+#' @param add_padding Logical. Add padding to the gtable?
+#' @param padding_size If \code{add_padding}=TRUE, size of the padding
+#' @param padding_unit Character vector indication the unit of the \code{padding_size}.
 #' @param ... Other arguments passed on to the \code{fn_ci} and \code{fn_summary}.
 #'
 #' @importFrom stats na.omit
@@ -112,6 +115,8 @@ forest <- function(data,
                    fn_summary = make_summary,
                    index_args = NULL,
                    theme = NULL,
+                   add_padding = FALSE,
+                   padding_size, padding_unit,
                    ...){
 
   dot_args <- list(...)
@@ -607,7 +612,10 @@ forest <- function(data,
   }
 
   # Add padding
-  gt <- gtable_add_padding(gt, unit(5, "mm"))
+  if (add_padding) {
+    gt <- gtable_add_padding(gt, unit(padding_size, padding_unit))
+  }
+
 
   # Auto fit the page
   # gt$widths <- unit(rep(1/ncol(gt), ncol(gt)), "npc")
