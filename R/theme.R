@@ -270,7 +270,7 @@ forest_theme <- function(base_size = 12,
     # For backward compatability
     title_args <- c("title_cex", "title_fontface", "title_col", "title_fontfamily")
     if(any(names(dot_args) %in% title_args)){
-      message(paste(title_args[title_args %in% names(dot_args)], collapse = ", "), 
+      message(paste(title_args[title_args %in% names(dot_args)], collapse = ", "),
                     " will be deprecated, use title_gp instead.")
       title_gp_old <- gpar(cex = dot_args$title_cex,
                            fontface = dot_args$title_fontface,
@@ -287,7 +287,7 @@ forest_theme <- function(base_size = 12,
     # For backward compatability
     arrow_args <- c("arrow_lwd", "arrow_fill", "arrow_col", "arrow_cex")
     if(any(names(dot_args) %in% arrow_args)){
-      message(paste(arrow_args[arrow_args %in% names(dot_args)], collapse = ", "), 
+      message(paste(arrow_args[arrow_args %in% names(dot_args)], collapse = ", "),
                     " will be deprecated, use arrow_gp instead.")
       arrow_gp_old <- gpar(fontsize = base_size,
                            fontfamily = base_family,
@@ -308,7 +308,7 @@ forest_theme <- function(base_size = 12,
     # For backward compatability
     xlab_args <- c("xlab_fontface", "xlab_cex")
     if(any(names(dot_args) %in% xlab_args)){
-      message(paste(xlab_args[xlab_args %in% names(dot_args)], collapse = ", "), 
+      message(paste(xlab_args[xlab_args %in% names(dot_args)], collapse = ", "),
                     " will be deprecated, use xlab_gp instead.")
       xlab_gp_old <- gpar(fontsize = base_size,
                           fontfamily = base_family,
@@ -328,7 +328,7 @@ forest_theme <- function(base_size = 12,
                                fontfamily = base_family),
               bg_params = list(fill=c(rep(c("#eff3f2", "white"),
                                 length.out=4))),
-              padding = unit(c(4, 3), "mm"))
+              padding = unit(c(0, 0), "mm"))
 
     # Table header
     colhead <- list(fg_params = list(hjust = 0, x = 0.05,
@@ -336,7 +336,7 @@ forest_theme <- function(base_size = 12,
                                     fontsize = base_size,
                                     fontfamily = base_family),
                    bg_params = list(fill = "white"),
-                   padding = unit(c(4, 4), "mm"))
+                   padding = unit(c(0, 0), "mm"))
 
     default <- list(core = core,
                     colhead = colhead)
