@@ -328,7 +328,7 @@ forest_theme <- function(base_size = 12,
                                fontfamily = base_family),
               bg_params = list(fill=c(rep(c("#eff3f2", "white"),
                                 length.out=4))),
-              padding = unit(c(0, 0), "mm"))
+              padding = unit(c(4, 3), "mm"))
 
     # Table header
     colhead <- list(fg_params = list(hjust = 0, x = 0.05,
@@ -336,7 +336,7 @@ forest_theme <- function(base_size = 12,
                                     fontsize = base_size,
                                     fontfamily = base_family),
                    bg_params = list(fill = "white"),
-                   padding = unit(c(0, 0), "mm"))
+                   padding = unit(c(4, 4), "mm"))
 
     default <- list(core = core,
                     colhead = colhead)
